@@ -41,6 +41,10 @@ public class UserDAOImpl implements UserDAO {
         hibernateUtil.delete(user);
     }
 
+    public void hyi(){
+
+    }
+
     @Override
     public List<User> getAllUsers() {
         return hibernateUtil.fetchAll(User.class);
