@@ -55,7 +55,7 @@ public class UserController {
 
     @RequestMapping(value = {"getAllUsers", "/"})
     public ModelAndView getAllUsers() {
-        logger.info("Getting the all Employees.");
+        logger.info("Getting the all Users.");
         List<User> userList = userService.getAllUsers();
         return new ModelAndView("userList", "userList", userList);
     }

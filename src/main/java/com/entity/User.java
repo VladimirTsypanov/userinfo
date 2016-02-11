@@ -3,6 +3,7 @@ package com.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 /**
@@ -27,11 +28,10 @@ public class User implements Serializable {
     private boolean admin;
 
     @Column
-    private Timestamp timestamp;
+    private Timestamp timestamp = new Timestamp(new Date().getTime());
 
     public User(){
     }
-
 
     public int getId() {
         return id;
@@ -85,7 +85,6 @@ public class User implements Serializable {
         if (admin != user.admin) return false;
         if (name != null ? !name.equals(user.name) : user.name != null) return false;
         return timestamp != null ? timestamp.equals(user.timestamp) : user.timestamp == null;
-
     }
 
     @Override

@@ -6,7 +6,7 @@
   Time: 15:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +25,8 @@
     <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title">
-                <div align="left"><b>Users Information</b> </div>
+                <%--<div align=""><b>Users Information</b> </div>--%>
+                <div align="left"><a href="getAllUsers">Users Information</a></div>
                 <div align="right"><a href="createUser">Add New User</a></div>
             </h3>
         </div>

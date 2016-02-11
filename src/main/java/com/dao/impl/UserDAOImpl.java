@@ -41,10 +41,6 @@ public class UserDAOImpl implements UserDAO {
         hibernateUtil.delete(user);
     }
 
-    public void hyi(){
-
-    }
-
     @Override
     public List<User> getAllUsers() {
         return hibernateUtil.fetchAll(User.class);
@@ -59,15 +55,14 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public List<User> getAllUsers(String userName) {
         String query = "SELECT * FROM Users e WHERE e.name like '%"+ userName +"%'";
-        List<Object[]> employeeObjects = hibernateUtil.<Object[]>fetchAll(query);
+        List<Object[]> userObjects = hibernateUtil.<Object[]>fetchAll(query);
         List<User> users = new ArrayList<>();
-        for(Object[] userObject: employeeObjects) {
+        for(Object[] userObject: userObjects) {
             User user = new User();
-//            int id = ((BigInteger) userObject[0]).intValue();
             int id = (Integer) userObject[0];
-            String name = (String) userObject[1];
+            boolean admin = (boolean) userObject[1];
             int age = (int) userObject[2];
-            boolean admin = (boolean) userObject[3];
+            String name = (String) userObject[3];
             Timestamp timestamp = (Timestamp) userObject[4];
             user.setId(id);
             user.setName(name);
