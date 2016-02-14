@@ -40,8 +40,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return userDAO.getAllUsers();
+    public List<User> getAllUsers(Integer offset, Integer maxResults) {
+        return userDAO.getAllUsers(offset, maxResults);
     }
 
     @Override
@@ -50,7 +50,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAllUsers(String userName) {
-        return userDAO.getAllUsers(userName);
+    public Long count() {
+        return userDAO.count();
+    }
+
+    @Override
+    public List<User> getAllUsers(String userName, Integer offset, Integer maxResults) {
+        return userDAO.getAllUsers(userName, offset, maxResults);
     }
 }

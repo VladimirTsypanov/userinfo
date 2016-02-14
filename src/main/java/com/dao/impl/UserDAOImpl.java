@@ -42,8 +42,8 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return hibernateUtil.fetchAll(User.class);
+    public List<User> getAllUsers(Integer offset, Integer maxResults) {
+        return hibernateUtil.fetchAll(User.class, offset, maxResults);
     }
 
     @Override
@@ -53,9 +53,9 @@ public class UserDAOImpl implements UserDAO {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<User> getAllUsers(String userName) {
+    public List<User> getAllUsers(String userName, Integer offset, Integer maxResults) {
         String query = "SELECT * FROM Users e WHERE e.name like '%"+ userName +"%'";
-        List<Object[]> userObjects = hibernateUtil.<Object[]>fetchAll(query);
+        List<Object[]> userObjects = hibernateUtil.<Object[]>fetchAll(query, offset, maxResults);
         List<User> users = new ArrayList<>();
         for(Object[] userObject: userObjects) {
             User user = new User();
@@ -73,5 +73,11 @@ public class UserDAOImpl implements UserDAO {
         }
         System.out.println(users);
         return users;
-    } 
+    }
+
+    @Override
+    public Long count() {
+        return (Long) hibernateUtil.count();
+    }
+
 }

@@ -108,4 +108,4 @@
     };
 </script>
 </body>
-</html> - See more at: http://myjourneyonjava.blogspot.com/2015/09/spring-4-mvc-hibernate-4-mysql-5-maven.html#sthash.axQJHwW5.dpuf
+</html>

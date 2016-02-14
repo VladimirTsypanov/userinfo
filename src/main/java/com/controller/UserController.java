@@ -5,6 +5,7 @@ import com.service.UserService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,17 +54,37 @@ public class UserController {
         return new ModelAndView("redirect:getAllUsers");
     }
 
+//    @RequestMapping(value = {"getAllUsers", "/"})
+//    public ModelAndView getAllUsers() {
+//        logger.info("Getting the all Users.");
+//        List<User> userList = userService.getAllUsers();
+//        return new ModelAndView("userList", "userList", userList);
+//    }
+
     @RequestMapping(value = {"getAllUsers", "/"})
-    public ModelAndView getAllUsers() {
+    public String getAllUsers(Model model, Integer offset, Integer maxResults) {
         logger.info("Getting the all Users.");
-        List<User> userList = userService.getAllUsers();
-        return new ModelAndView("userList", "userList", userList);
+        model.addAttribute("userList", userService.getAllUsers(offset, maxResults));
+        model.addAttribute("count", userService.count());
+        model.addAttribute("offset", offset);
+        return "userList";
     }
 
+//    @RequestMapping("searchUser")
+//    public ModelAndView searchUser(@RequestParam("searchName") String searchName) {
+//        logger.info("Searching the User. User Names: "+searchName);
+//        List<User> userList = userService.getAllUsers(searchName);
+//        return new ModelAndView("userList", "userList", userList);
+//    }
+
     @RequestMapping("searchUser")
-    public ModelAndView searchUser(@RequestParam("searchName") String searchName) {
+    public String searchUser(@RequestParam("searchName") String searchName, Model model, Integer offset, Integer maxResults) {
         logger.info("Searching the User. User Names: "+searchName);
-        List<User> userList = userService.getAllUsers(searchName);
-        return new ModelAndView("userList", "userList", userList);
+        List<User> userList = userService.getAllUsers(searchName, offset, maxResults);
+        model.addAttribute("userList", userList);
+        model.addAttribute("count", userList.size());
+        model.addAttribute("offset", offset);
+        return "userList";
     }
+
 }

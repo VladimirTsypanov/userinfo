@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tag" uri="/WEB-INF/taglibs/customTaglib.tld"%>
 <%--
   Created by IntelliJ IDEA.
   User: Владимир
@@ -20,7 +21,7 @@
         }
     </style>
 </head>
-<body> class=".container-fluid">
+<body>
 <div class="container myrow-container">
     <div class="panel panel-success">
         <div class="panel-heading">
@@ -38,7 +39,7 @@
 
                 <form action="searchUser">
                     <div class="row">
-                        <div class="col-md-6"><div class="col-md-6">Search Users:</div><div class="col-md-6"> <input type="text" name="searchName" id="searchName"> </div></div>
+                        <div class="col-md-6"><div class="col-md-6">Search Users:</div><div class="col-md-6"> <input type="text" name="searchName" id="searchName" required> </div></div>
                         <div class="col-md-4"><input class="btn btn-success" type='submit' value='Search'/></div>
                     </div>
                 </form>
@@ -58,7 +59,7 @@
                     <tbody>
                     <c:forEach items="${userList}" var="user">
                         <tr>
-                            <th><c:out value="${user.id}"/></th>
+                            <th><c:out value="${offset + user.id + 1}"/></th>
                             <th><c:out value="${user.name}"/></th>
                             <th><c:out value="${user.age}"/></th>
                             <th><c:out value="${user.admin}"/></th>
@@ -69,6 +70,8 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                <tag:paginate max="15" offset="${offset}" count="${count}"
+                              uri="/" next="&raquo;" previous="&laquo;" />
             </c:if>
         </div>
     </div>
