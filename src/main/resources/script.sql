@@ -9,16 +9,16 @@ CREATE TABLE `test`.`users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (100, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (101, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (102, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (103, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (104, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (105, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (106, TRUE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (107, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (108, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (109, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (110, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (111, FALSE , 4, 'Name', '2013-08-05 18:19:03');
-INSERT INTO users (id, admin, age, name, timestamp) VALUES (112, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (1, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (2, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (3, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (4, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (5, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (6, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (7, TRUE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (8, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (9, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (10, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (11, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (12, FALSE , 4, 'Name', '2013-08-05 18:19:03');
+INSERT INTO users (id, admin, age, name, timestamp) VALUES (13, FALSE , 4, 'Name', '2013-08-05 18:19:03');
