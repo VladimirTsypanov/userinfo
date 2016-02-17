@@ -37,11 +37,6 @@ public class HibernateUtil {
         delete(entity);
     }
 
-//    @SuppressWarnings("unchecked")
-//    public <T> List<T> fetchAll(Class<T> entityClass) {
-//        return sessionFactory.getCurrentSession().createQuery(" FROM "+entityClass.getName()).list();
-//    }
-
     @SuppressWarnings("unchecked")
     @Transactional
     public <T> List<T> fetchAll(Class<T> entityClass, Integer offset, Integer maxResults) {
@@ -50,11 +45,6 @@ public class HibernateUtil {
                 .setMaxResults(maxResults != null ? maxResults : 10)
                 .list();
     }
-
-//    @SuppressWarnings("rawtypes")
-//    public <T> List fetchAll(String query) {
-//        return sessionFactory.getCurrentSession().createSQLQuery(query).list();
-//    }
 
     @SuppressWarnings("rawtypes")
     @Transactional

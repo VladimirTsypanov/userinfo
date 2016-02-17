@@ -40,7 +40,7 @@
                 <form action="searchUser">
                     <div class="row">
                         <div class="col-md-6"><div class="col-md-6">Search Users:</div><div class="col-md-6"> <input type="text" name="searchName" id="searchName" required> </div></div>
-                        <div class="col-md-4"><input class="btn btn-success" type='submit' value='Search'/></div>
+                        <div class="col-md-4"><input class="btn btn-success" type='submit' value='Search By Name'/></div>
                     </div>
                 </form>
 
@@ -77,9 +77,6 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <%-- <script src="<c:url value="/resources/js/jquery-2.1.3.js"/>"></script>
-    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
-    --%>
+</div>
 </body>
 </html>

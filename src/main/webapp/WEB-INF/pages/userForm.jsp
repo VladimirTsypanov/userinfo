@@ -33,6 +33,7 @@
         <div class="panel-heading">
             <h3 class="panel-title">
                 User Details
+                <div align="right"><a href="getAllUsers">Return to Users</a></div>
             </h3>
         </div>
         <div class="panel-body">
@@ -42,14 +43,14 @@
                     <div class="control-label col-xs-3"> <form:label path="name" >Name</form:label> </div>
                     <div class="col-xs-6">
                         <form:hidden path="id" value="${userObject.id}"/>
-                        <form:input cssClass="form-control" path="name" value="${userObject.name}"/>
+                        <form:input cssClass="form-control" path="name" value="${userObject.name}" type="text"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <form:label path="age" cssClass="control-label col-xs-3">Age</form:label>
                     <div class="col-xs-6">
-                        <form:input cssClass="form-control" path="age" value="${userObject.age}"/>
+                        <form:input cssClass="form-control" path="age" value="${userObject.age}" type="number"/>
                     </div>
                 </div>
 
@@ -82,30 +83,29 @@
 
 <script type="text/javascript">
     function submitUserForm() {
-
-// getting the user form values
         var name = $('#name').val().trim();
         var age = $('#age').val();
-//        var admin = $('#admin').val();
-        if(name.length ==0) {
+        var admin = $('#admin').val();
+        var pattern = /^\d+$/;
+
+        if(name.length == 0) {
             alert('Please enter name');
             $('#name').focus();
             return false;
         }
 
-        if(age <= 0) {
+        if((age.length == 0) || (age <= 0) || !(pattern.test(age))) {
             alert('Please enter proper age');
             $('#age').focus();
             return false;
         }
-
-//        if(admin <= 0) {
-//            alert('Please enter proper salary');
-//            $('#isAdmin').focus();
-//            return false;
-//        }
+        if((admin.length == 0) || !(admin === 'true') && !(admin === 'false')) {
+            alert('Please enter proper admin value: "true" - if user is an admin, otherwise "false"');
+            $('#isAdmin').focus();
+            return false;
+        }
         return true;
-    };
+    }
 </script>
 </body>
 </html>
