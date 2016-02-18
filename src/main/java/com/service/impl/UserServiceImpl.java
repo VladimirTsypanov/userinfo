@@ -18,7 +18,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     public UserServiceImpl(){
-        System.out.println("EmployeeServiceImpl()");
+        System.out.println("UserServiceImpl()");
     }
 
     @Autowired

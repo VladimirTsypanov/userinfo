@@ -18,7 +18,7 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
 
     public UserDAOImpl() {
-        System.out.println("EmployeeDAOImpl");
+        System.out.println("UserDAOImpl");
     }
 
     @Autowired

@@ -74,7 +74,7 @@ public class UserController {
                 || url.equals(LOCAL_HOST)){
             return new ModelAndView("redirect:getAllUsers");
         }
-        long offset = Long.parseLong(url.substring(url.length() - 2));
+        long offset = Long.parseLong(url.substring(url.lastIndexOf("=") + 1));
         if (countOfUser > offset){
             return new ModelAndView("redirect:" + url);
         }
